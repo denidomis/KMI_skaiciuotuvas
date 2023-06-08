@@ -18,10 +18,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .card {
-            background-color: transparent;
-            border: none;
+            text-align: center;
             color: white;
         }
     </style>
@@ -46,22 +43,12 @@
         </ul>
     </div>
 </nav>
-<div class="container">
-    <div class="row justify-content-center">
-            <div class="card">
-                <div class="card-body">
-                    <?php
-                    $x = $_GET['x'];
-                    $y = $_GET['y'];
-                    $z = (($y/100)*($y/100));
-                    $KMI = $x/ $z;
-                    ?>
-                    <h5 class="card-title">Jūsų kūno masės indeksas yra:</h5>
-                    <p class="card-text"> <?= round($KMI, 2); ?> </p>
-                    <a class="btn btn-primary" href="forma.php">Gryžti į skaičiavimą</a>
-                </div>
-            </div>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="text-center text-white">
+        <h1>Welcome to My Page</h1>
+
     </div>
 </div>
+
 </body>
 </html>

@@ -7,10 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bootstrap.min.css" >
     <title>Document</title>
+    <style>
+        body{
+            background-image: url("Images/pexels-hasan-albari-1229861.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-primary navbar-expand-lg d-flex justify-content-center">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg d-flex justify-content-center">
+    <a class="navbar-brand" href="base.php">Base</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,9 +39,6 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="japonuKalendorius.php">japonų kalendorius</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Disabled</a>
             </li>
         </ul>
     </div>
