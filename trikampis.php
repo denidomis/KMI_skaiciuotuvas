@@ -12,6 +12,7 @@
             background-image: url("Images/pexels-hasan-albari-1229861.jpg");
             background-size: cover;
             background-position: center;
+            overflow-y: hidden;
         }
         .container {
             height: 100vh;
@@ -20,6 +21,7 @@
             align-items: center;
             text-align: center;
             color: white;
+            flex-direction: column;
         }
     </style>
 </head>
@@ -43,7 +45,7 @@
         </ul>
     </div>
 </nav>
-<div class="container mt-5">
+<div class="container">
     <form  method="post">
         <div class="form-group">
             <label for="formGroupExampleInput">Krastine a</label>
@@ -83,9 +85,10 @@
 
     $rezultatas = nustatytiTrikampioTipa($a, $b, $c);
     ?>
-    <h5 class="card-title">Rezultatas:</h5>
-    <p class="card-text"> <?= $rezultatas ?> </p>
+    <div class="newRow">
+        <h5 class="card-title">Rezultatas:</h5>
+        <p class="card-text"><?= $rezultatas ?></p>
+    </div>
 </div>
-
 </body>
 </html>

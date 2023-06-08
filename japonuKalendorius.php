@@ -12,6 +12,7 @@
             background-image: url("Images/pexels-hasan-albari-1229861.jpg");
             background-size: cover;
             background-position: center;
+            overflow-y: hidden;
         }
         .container {
             height: 100vh;
@@ -20,6 +21,10 @@
             align-items: center;
             text-align: center;
             color: white;
+            flex-direction: column;
+        }
+        .newRow {
+
         }
     </style>
 </head>
@@ -136,8 +141,10 @@ function nustatytiSpalvaPagalKalendoriu($metai) {
 
 $spalva = nustatytiSpalvaPagalKalendoriu($metai);
 ?>
-<h5 class="card-title">Spalva:</h5>
-<p class="card-text"> <?= $spalva ?> </p>
+    <div class="newRow">
+        <h5 class="card-title">Spalva:</h5>
+        <p class="card-text"> <?= $spalva ?> </p>
+    </div>
 </div>
 </body>
 </html>

@@ -12,6 +12,7 @@
             background-image: url("Images/pexels-hasan-albari-1229861.jpg");
             background-size: cover;
             background-position: center;
+            overflow-y: hidden;
         }
         .container {
             height: 100vh;
