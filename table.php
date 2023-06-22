@@ -22,24 +22,26 @@
             text-align: center;
             color: white;
         }
+        .antraste{
+            background: #0069d9;
+        }
     </style>
 </head>
 <body>
-<?php include 'navBar.php';?>
-<div class="container mt-5">
-    <form  method="get" action="pirmas.php">
-        <div class="form-group">
-            <label for="formGroupExampleInput">Svoris (kg)</label>
-            <input name="x" type="text" class="form-control" id="formGroupExampleInput" placeholder="kg">
-        </div>
-        <div class="form-group">
-            <label for="formGroupExampleInput2">Ugis (cm)</label>
-            <input name="y" type="text" class="form-control" id="formGroupExampleInput2" placeholder="cm">
-        </div>
-        <div class="form-group">
-            <input type="submit" value="Skaiciuoti" class="form-control btn btn-primary" id="formGroupExampleInput2">
-        </div>
-    </form>
-</div>
+    <?php include 'navBar.php';?>
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <table border="1" class="table">
+            <?php for ($y=1; $y<11; $y++){ ?>
+                <tr>
+                    <?php for ($i=1; $i<11; $i++){ ?>
+                        <td <?= ($y==1 || $i==1)?' class="antraste"':''?>>
+                            <?php
+                            if (rand(0, 100)<20 || $y==1 || $i==1)
+                                echo $y*$i?></td>
+                    <?php } ?>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 </html>
