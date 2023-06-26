@@ -22,6 +22,10 @@
             text-align: center;
             color: white;
         }
+        a {
+            color: white;
+            text-decoration: none;
+        }
         .button {
             background-color: #4CAF50; /* Green */
             border: none;
@@ -32,208 +36,38 @@
             display: inline-block;
             font-size: 16px;
         }
+        .row {
+            justify-content: center;
+        }
+        .mb-4_5 {
+            margin-bottom: 32px !important;
     </style>
 </head>
 <body>
 <?php include 'navBar.php';?>
-<div class="container d-flex justify-content-center align-items-center vh-100">
-        <input id="zDayOfYear" type="hidden" value="173">
-        <div class="no-print dfpLeaderboard">
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0394138966856108" data-ad-slot="3451986312" data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+<div class="container d-flex justify-content-sm-center align-items-center vh-100">
+    <form action="table.php" method="POST" novalidate="novalidate">
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Dydis</label>
+            <div class="col-sm-4">
+                <input type="number" name="size1" class="form-control" value="10">
+            </div> :
+            <div class="col-sm-4">
+                <input type="number" name="size2" class="form-control" value="10">
+            </div>
         </div>
-
-        <form action="table.php" novalidate="novalidate">
-
-            <div class="row d-none">
-                <div class="col-5 form-group">
-                    <label class="form-label" for="favorite-list">
-                        <a href="#">Favorites</a>
-                    </label>
-                    <div class="input-group align-items-center">
-                        <select id="favorite-list" class="form-control" data-favorite-subscriber="false">
-                            <option></option>
-                        </select>
-                        <span class="ml-3 fa-icon-90pct">(<a href="#">Manage Favorites</a>)</span>
-                    </div>
-                </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label mr-2 pt-0">Užpildytumo procentai</label>
+            <div class="col-sm-8">
+                <input type="number" name="percent" class="form-control" value="50">
             </div>
-
-            <div class="row">
-                <div class="form-group col-md-3">
-                    <label class="form-label">
-                        <a href="#">Number Set</a>
-                    </label>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.NumberSet" type="radio" value="5"> 1 to 5
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.NumberSet" type="radio" value="10" checked=""> 1 to 10
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.NumberSet" type="radio" value="12"> 1 to 12
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.NumberSet" type="radio" value="15"> 1 to 15
-                        </label>
-                    </div>
-                </div>
-                <div class="form-group col-md-2">
-                    <div>
-                        <label class="form-label"><a href="#">Difficulty</a></label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.Difficulty" type="radio" value="Easy"> Easy
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.Difficulty" type="radio" value="Medium" checked=""> Medium
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.Difficulty" type="radio" value="Hard"> Hard
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" name="Create.Difficulty" type="radio" value="Wow"> Wow
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-7">
-                    <div class="form-group">
-                        <label class="form-label">
-                            <a href="#">Options</a>
-                        </label>
-                        <div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" id="option-Score" value="true" type="checkbox" name="Create.Score" data-cbx-unchecked-value="false" checked=""> Name/date/score
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" id="option-Randomize" value="true" type="checkbox" name="Create.Randomize" data-cbx-unchecked-value="false"> Randomize table
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">
-                            <a href="#">Fact Families</a>
-                        </label>
-                        <div>
-                            <span class="margin-right-medium font-family-select" data-on="true">Select All</span><span class="font-family-select" data-on="false">Unselect All</span>
-                        </div>
-                        <div id="fact-familiies">
-                            <div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color valid" type="checkbox" name="Create.Family" value="1" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked="" aria-describedby="Create.Family-error"> <span>1 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="2" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>2 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="3" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>3 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="4" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>4 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="5" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>5 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="6" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>6 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="7" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>7 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="8" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>8 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="9" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>9 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family">
-                                        <input class="form-check-input require-array muted-color" type="checkbox" name="Create.Family" value="10" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>10 </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family muted-color">
-                                        <input class="form-check-input require-array muted-color" disabled="disabled" type="checkbox" name="Create.Family" value="11" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>11 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family muted-color">
-                                        <input class="form-check-input require-array muted-color" disabled="disabled" type="checkbox" name="Create.Family" value="12" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>12 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family muted-color">
-                                        <input class="form-check-input require-array muted-color" disabled="disabled" type="checkbox" name="Create.Family" value="13" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>13 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family muted-color">
-                                        <input class="form-check-input require-array muted-color" disabled="disabled" type="checkbox" name="Create.Family" value="14" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>14 </span>
-                                    </label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <label class="form-check-label family muted-color">
-                                        <input class="form-check-input require-array muted-color" disabled="disabled" type="checkbox" name="Create.Family" value="15" data-cbx-unchecked-ignore="true" data-cbx-disabled-ignore="true" checked=""> <span>15 </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <span class="text-danger field-validation-valid" data-valmsg-for="Create.Family" data-valmsg-replace="true"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group mt-4">
-                <button id="submit" type="submit" class="btn btn-primary mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-2">Generate</button>
-                <button id="btn-worksheet-favorite-save" type="button" class="btn mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-5">Save <i class="fas fa-heart" style="color:#ff5555;"></i></button>
-                <button id="btn-worksheet-reshuffle" type="button" class="btn mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-2">Reshuffle</button>
-                <button id="btn-worksheet-reset" type="button" class="btn mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-2">Reset Form</button>
-                <div id="form-worksheet-messages" class="text-success text-btn-right"></div></div>
-            <input type="hidden" id="favorite-worksheet-type" value="2">
-            <input type="hidden" data-formfill-force="true" data-val="true" data-val-required="The Seed field is required." id="Create_Seed" name="Create.Seed" value="7788793">
-            <input type="hidden" data-val="true" data-val-required="The CreateType field is required." id="Create_CreateType" name="Create.CreateType" value="MultiplicationTableCustom">
-            <input type="hidden" data-val="true" data-val-required="The WorksheetDisplayType field is required." id="Create_WorksheetDisplayType" name="Create.WorksheetDisplayType" value="Problems">
-        </form>
+        </div>
+        <div class="form-group mt-4">
+            <button type="submit" class="btn btn-primary mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-2">Generuoti</button>
+            <button type="reset" class="btn mfc d-block d-md-inline mb-2 mb-md-0 mr-0 mr-md-2">Atstatyti formą</button>
+        </div>
+    </form>
 </div>
-
 </body>
+
 </html>

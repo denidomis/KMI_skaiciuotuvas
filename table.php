@@ -17,6 +17,7 @@
         .container {
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -29,19 +30,25 @@
 </head>
 <body>
     <?php include 'navBar.php';?>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="container">
+        <?php
+        $a = $_POST['size1'] + 1;
+        $b = $_POST['size2'] + 1;
+        $rank = $_POST['percent']
+        ?>
         <table border="1" class="table">
-            <?php for ($y=1; $y<11; $y++){ ?>
+            <?php for ($y=1; $y<$a; $y++){ ?>
                 <tr>
-                    <?php for ($i=1; $i<11; $i++){ ?>
+                    <?php for ($i=1; $i<$b; $i++){ ?>
                         <td <?= ($y==1 || $i==1)?' class="antraste"':''?>>
                             <?php
-                            if (rand(0, 100)<20 || $y==1 || $i==1)
+                            if (rand(0, 100)<$rank || $y==1 || $i==1)
                                 echo $y*$i?></td>
                     <?php } ?>
                 </tr>
             <?php } ?>
         </table>
+        <a class="btn btn-primary" href="užduočių_generatorius.php">Atgal</a>
     </div>
 </body>
 </html>
